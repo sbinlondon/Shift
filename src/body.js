@@ -59,7 +59,7 @@ export default function (part) {
  points.neckLeft = points.middle.shiftTowards(points.leftShoulder, neckWidth /2)
  points.neckRight = points.middle.shiftTowards(points.rightShoulder, neckWidth /2)
 
-  let neckDepthFront = 150 * options.neckDepth
+  let neckDepthFront = 150 * options.neckDepthFront
 
   points.middleHem = points.bottomLeft.shiftTowards(points.bottomRight, widthBody /2)
 
@@ -80,7 +80,7 @@ export default function (part) {
       .move(points.neckFront)
       .curve(points.neckCp4, points.neckCp3, points.neckLeft)
 
-  points.neckBack = points.middle.shiftTowards()
+  points.neckBack = points.middle.shiftTowards(points.neckFront)
 
 
 
